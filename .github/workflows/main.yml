@@ -20,5 +20,5 @@ jobs:
     uses: MohamedAbdelrehem/test-workflow/.github/workflows/main.yml@master
     with:
       username: "Medo"
-    # secrets:
-    #   SECRET_TOKEN: ${{ secrets.REPO_A_SECRET }}
+    secrets:
+      SECRET_TOKEN: ${{ secrets.WORKFLOWTOKEN }}
