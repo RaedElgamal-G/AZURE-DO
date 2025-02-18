@@ -19,5 +19,5 @@ jobs:
   call-reusable:
     uses: MohamedAbdelrehem/test-workflow/.github/workflows/main.yml@master
     with:
-      github-token: ${{ secrets.WORKFLOWTOKEN }}
-      username: "Medo"
+      repo-token: ${{ secrets.personal_access_token }}
+      username: "Medo"        
