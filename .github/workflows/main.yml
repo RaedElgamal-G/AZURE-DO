@@ -1,0 +1,24 @@
+# .github/workflows/call-reusable-workflow.yml
+name: Call Private Workflow
+
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+
+
+jobs:
+  call-reusable:
+    uses: MohamedAbdelrehem/test-workflow/.github/workflows/main.yml@master
+    with:
+      username: "Medo"
+    # secrets:
+    #   SECRET_TOKEN: ${{ secrets.REPO_A_SECRET }}
