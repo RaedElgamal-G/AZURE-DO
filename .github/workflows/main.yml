@@ -1,4 +1,3 @@
-# .github/workflows/call-reusable-workflow.yml
 name: Call Private Workflow
 
 on: 
@@ -14,10 +13,15 @@ on:
           - warning
           - debug
 
-
 jobs:
-  call-reusable:
-    uses: MohamedAbdelrehem/test-workflow/.github/workflows/main.yml@master
-    with:
-      github-token: ${{ secrets.WORKFLOWTOKEN }}
-      username: "Medo"        
+  trigger-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Private Workflow via API
+        run: |
+          curl --location 'https://api.github.com/repos/MohamedAbdelrehem/test-workflow/actions/workflows/main.yml/dispatches' \
+          --header 'Accept: application/vnd.github+json' \
+          --header "Authorization: Bearer ${{ secrets.WORKFLOWTOKEN }}" \
+          --header 'X-GitHub-Api-Version: 2022-11-28' \
+          --header 'Content-Type: application/json' \
+          --data '{"ref":"master"}'
