@@ -1,27 +1,33 @@
-name: Call Private Workflow
+name: Trigger Workflow Dispatch
 
-on: 
+on:
   workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-          - info
-          - warning
-          - debug
 
 jobs:
-  trigger-workflow:
+  trigger:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Private Workflow via API
+      - name: Create Inputs JSON
+        run: |
+          echo '{
+            "ref": "master",
+            "inputs": {
+                "AzureToken": "${{ secrets.AZURE_PAT }}",
+                "Organization": "GSIntegrationTeam",
+                "ProjectName": "Scrap%20Management",
+                "POName":"Ahmed Hisham",
+                "FrontEndIDs":"[\"b74e0bb1-49f3-65af-9283-849b2e350002\"]",
+                "BackEndIDs":"[\"51625031-41e2-6ab0-9da1-c5ce45615271\"]",
+                "MobileIDs":"[\"1436548a-4c9a-6ba8a-ad22-8aa503fd959b\"]",
+                "StateReflectKeyword": "Ready For Review"
+            }
+          }' > inputs.json
+
+      - name: Send Dispatch Request
         run: |
           curl --location 'https://api.github.com/repos/MohamedAbdelrehem/test-workflow/actions/workflows/main.yml/dispatches' \
           --header 'Accept: application/vnd.github+json' \
-          --header "Authorization: Bearer ${{ secrets.WORKFLOWTOKEN }}" \
+          --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'X-GitHub-Api-Version: 2022-11-28' \
           --header 'Content-Type: application/json' \
-          --data '{"ref":"master"}'
+          --data @inputs.json
