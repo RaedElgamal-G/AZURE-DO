@@ -10,7 +10,7 @@ jobs:
       - name: Create Inputs JSON
         run: |
           echo '{
-            "ref": "master",
+            "ref": "feature/workflowpassing",
             "inputs": {
                 "AzureToken": "${{ secrets.AZURE_PAT }}",
                 "Organization": "GSIntegrationTeam",
