@@ -15,10 +15,10 @@ jobs:
                 "AzureToken": "${{ secrets.AZURE_PAT }}",
                 "Organization": "GSIntegrationTeam",
                 "ProjectName": "Scrap%20Management",
-                "POName":"Ahmed Hisham",
-                "FrontEndIDs":"[\"b74e0bb1-49f3-65af-9283-849b2e350002\"]",
-                "BackEndIDs":"[\"51625031-41e2-6ab0-9da1-c5ce45615271\"]",
-                "MobileIDs":"[\"1436548a-4c9a-6ba8a-ad22-8aa503fd959b\"]",
+                "POName": "Ahmed Hisham",
+                "FrontEndIDs": "b74e0bb1-49f3-65af-9283-849b2e350002",
+                "BackEndIDs": "51625031-41e2-6ab0-9da1-c5ce45615271",
+                "MobileIDs": "1436548a-4c9a-6ba8a-ad22-8aa503fd959b",
                 "StateReflectKeyword": "Ready For Review"
             }
           }' > inputs.json
