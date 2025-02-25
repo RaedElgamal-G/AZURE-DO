@@ -23,9 +23,20 @@ jobs:
             }
           }' > inputs.json
 
-      - name: Send Dispatch Request
+
+# for Analysis
+      # - name: Analysis Automation
+      #   run: |
+      #     curl --location 'https://api.github.com/repos/MohamedAbdelrehem/AzureAnalysisAutomate/actions/workflows/Actions_Schedule_check_updates.yml/dispatches' \
+      #     --header 'Accept: application/vnd.github+json' \
+      #     --header 'Authorization: Bearer ${{ secrets.privateRepoAuth }}' \
+      #     --header 'X-GitHub-Api-Version: 2022-11-28' \
+      #     --header 'Content-Type: application/json' \
+      #     --data @inputs.json
+# for Task
+      - name: Task Creation Automation
         run: |
-          curl --location 'https://api.github.com/repos/MohamedAbdelrehem/AzureAnalysisAutomate/actions/workflows/Actions_Schedule_check_updates.yml/dispatches' \
+          curl --location 'https://api.github.com/repos/MohamedAbdelrehem/AzureTaskAutomate/actions/workflows/Actions_Schedule_check_updates.yml/dispatches' \
           --header 'Accept: application/vnd.github+json' \
           --header 'Authorization: Bearer ${{ secrets.privateRepoAuth }}' \
           --header 'X-GitHub-Api-Version: 2022-11-28' \
