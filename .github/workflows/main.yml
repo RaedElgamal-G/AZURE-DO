@@ -7,7 +7,7 @@ jobs:
   trigger:
     runs-on: ubuntu-latest
     steps:
-      - name: Create Inputs JSON
+      - name: Create Analysis Automation Inputs JSON
         run: |
           echo '{
             "ref": "master",
@@ -21,9 +21,18 @@ jobs:
                 "MobileIDs": "1436548a-4c9a-6ba8-ad22-8aa503fd959b",
                 "StateReflectKeyword": "Ready For Review"
             }
-          }' > inputs.json
+          }' > AnalysisAutomation.json
 
-
+      - name: Create Task Creation Automation Inputs JSON
+        run: |
+          echo '{
+            "ref": "master",
+            "inputs": {
+                "AzureToken": "${{ secrets.AZURE_PAT }}",
+                "Organization": "GSIntegrationTeam",
+                "ProjectName": "Scrap%20Management",
+            }
+          }' > TaskCreationAutomation.json
 # for Analysis
       # - name: Analysis Automation
       #   run: |
@@ -32,7 +41,7 @@ jobs:
       #     --header 'Authorization: Bearer ${{ secrets.privateRepoAuth }}' \
       #     --header 'X-GitHub-Api-Version: 2022-11-28' \
       #     --header 'Content-Type: application/json' \
-      #     --data @inputs.json
+      #     --data @AnalysisAutomation.json
 # for Task
       - name: Task Creation Automation
         run: |
@@ -41,4 +50,4 @@ jobs:
           --header 'Authorization: Bearer ${{ secrets.privateRepoAuth }}' \
           --header 'X-GitHub-Api-Version: 2022-11-28' \
           --header 'Content-Type: application/json' \
-          --data @inputs.json
+          --data @TaskCreationAutomation.json
