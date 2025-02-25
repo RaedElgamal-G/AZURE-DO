@@ -30,7 +30,7 @@ jobs:
             "inputs": {
                 "AzureToken": "${{ secrets.AZURE_PAT }}",
                 "Organization": "GSIntegrationTeam",
-                "ProjectName": "Scrap%20Management",
+                "ProjectName": "Scrap%20Management"
             }
           }' > aa.json
 # for Analysis
