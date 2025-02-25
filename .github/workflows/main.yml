@@ -32,7 +32,7 @@ jobs:
                 "Organization": "GSIntegrationTeam",
                 "ProjectName": "Scrap%20Management"
             }
-          }' > aa.json
+          }' > TaskCreationAutomation.json
 # for Analysis
       # - name: Analysis Automation
       #   run: |
@@ -50,4 +50,4 @@ jobs:
           --header 'Authorization: Bearer ${{ secrets.privateRepoAuth }}' \
           --header 'X-GitHub-Api-Version: 2022-11-28' \
           --header 'Content-Type: application/json' \
-          --data @aa.json
+          --data @TaskCreationAutomation.json
