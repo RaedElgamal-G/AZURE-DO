@@ -1,9 +1,7 @@
-<p align="center">
- <img width="350px" src="AZURE-DO.png" align="center" alt="AZUREDOLogo" />
-
-</h1>
-
 <br>
+<p align="center">
+ <img  src="AZURE-DO.png" align="center" alt="AZUREDOLogo" />
+</h1>
 
 ---
 
