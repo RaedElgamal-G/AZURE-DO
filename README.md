@@ -7,7 +7,7 @@
 
 ## 📖 About AZURE-DO
 
-AZURE-DO is an intelligent automation trigger for Azure DevOps, responsible for initiating workflows in other repositories. It seamlessly integrates with **AzureAnalysisAutomate** and **AzureTaskAutomate**, ensuring efficient work item processing, sprint analysis, and task automation.
+AZURE-DO is an intelligent automation trigger for Azure DevOps, responsible for initiating workflows in other repositories. It seamlessly integrates with **our tools** (**AzureAnalysisAutomate** and **AzureTaskAutomate**), ensuring efficient work item processing, sprint analysis, and task automation.
 
 ## 🎯 Why AZURE-DO?
 
@@ -80,6 +80,9 @@ This will initiate workflow execution in the **AzureAnalysisAutomate** and **Azu
 - [ ] Enhance Debug Logging 🛠
 - [x] Trigger Analysis Automation 📊
 - [x] Automate Task Creation ✅
+- [x] Implement Work Item State Updates 🔄
+- [x] Handle Missing Tasks Automatically 📝
+- [x] Extract and Update Effort Estimations ⚡
 
 ---
 
