@@ -11,10 +11,10 @@ AZURE-DO is an intelligent automation trigger for Azure DevOps, responsible for 
 
 ## 🎯 Why AZURE-DO?
 
-✔ **Acts as the Brain** – Triggers key workflows for automation.
-✔ **Reduces Manual Effort** – Ensures seamless execution of tasks in multiple repos.
-✔ **Improves Workflow Synchronization** – Keeps analysis and task automation in sync.
-✔ **Seamless CI/CD Integration** – Works effortlessly with Azure Pipelines and GitHub Actions.
+✔ **Acts as the Brain** – Triggers key workflows for automation.<br>
+✔ **Reduces Manual Effort** – Ensures seamless execution of tasks in multiple repos.<br>
+✔ **Improves Workflow Synchronization** – Keeps analysis and task automation in sync.<br>
+✔ **Seamless CI/CD Integration** – Works effortlessly with Azure Pipelines and GitHub Actions.<br>
 
 ## 🚀 Features
 
