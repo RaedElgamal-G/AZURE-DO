@@ -7,8 +7,31 @@ jobs:
   trigger:
     runs-on: ubuntu-latest
     steps:
+  
+# for Task
+      - name: Create Task Creation Automation Inputs JSON
+        run: |
+          echo '{
+            "ref": "master",
+            "inputs": {
+                "AzureToken": "${{ secrets.AZURE_PAT }}",
+                "Organization": "GSIntegrationTeam",
+                "ProjectName": "Scrap%20Management"
+            }
+          }' > TaskCreationAutomation.json
+          
+      - name: Task Creation Automation
+        run: |
+          curl --location 'https://api.github.com/repos/MohamedAbdelrehem/AzureTaskAutomate/actions/workflows/Actions_Schedule_check_updates.yml/dispatches' \
+          --header 'Accept: application/vnd.github+json' \
+          --header 'Authorization: Bearer ${{ secrets.privateRepoAuth }}' \
+          --header 'X-GitHub-Api-Version: 2022-11-28' \
+          --header 'Content-Type: application/json' \
+          --data @TaskCreationAutomation.json
 
-    # for Analysis
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ # for Analysis
       # - name: Create Analysis Automation Inputs JSON
       #   run: |
       #     echo '{
@@ -33,25 +56,3 @@ jobs:
       #     --header 'X-GitHub-Api-Version: 2022-11-28' \
       #     --header 'Content-Type: application/json' \
       #     --data @AnalysisAutomation.json
-# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-# for Task
-      - name: Create Task Creation Automation Inputs JSON
-        run: |
-          echo '{
-            "ref": "master",
-            "inputs": {
-                "AzureToken": "${{ secrets.AZURE_PAT }}",
-                "Organization": "GSIntegrationTeam",
-                "ProjectName": "Scrap%20Management"
-            }
-          }' > TaskCreationAutomation.json
-          
-      - name: Task Creation Automation
-        run: |
-          curl --location 'https://api.github.com/repos/MohamedAbdelrehem/AzureTaskAutomate/actions/workflows/Actions_Schedule_check_updates.yml/dispatches' \
-          --header 'Accept: application/vnd.github+json' \
-          --header 'Authorization: Bearer ${{ secrets.privateRepoAuth }}' \
-          --header 'X-GitHub-Api-Version: 2022-11-28' \
-          --header 'Content-Type: application/json' \
-          --data @TaskCreationAutomation.json
