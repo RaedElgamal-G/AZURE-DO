@@ -18,7 +18,7 @@ jobs:
                 "Organization": "GSIntegrationTeam",
                 "ProjectName": "Scrap%20Management",
                 "ActivateAutoClose": false,
-                "TaskTypesTitle":"Test1 Azure-DO,Test2 Azure-DO"
+                "TaskTypesTitle":"FE-CreatUI,FE-Review,FE-APIIntegration,FE-ReviewStory"
             }
           }' > TaskCreationAutomation.json
           
