@@ -25,7 +25,7 @@ jobs:
                 "Organization": "GSIntegrationTeam",
                 "ProjectName": "Scrap%20Management",
                 "ActivateAutoClose": false,
-                "TaskTypesTitle":"Test Analysis,Test Case Preparation,Test Execution"
+                "TaskTypesTitle":"[BE][Supplier][Design],[BE] [Supplier][Implementation],[BE] [Supplier][UnitTest],[BE] [Supplier][Review]"
             }
           }' > TaskCreationAutomation.json
           
