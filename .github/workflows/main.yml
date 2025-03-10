@@ -11,8 +11,10 @@ jobs:
 
 # FrontEnd Team
 # "TaskTypesTitle":"FE-CreatUI,FE-Review,FE-APIIntegration,FE-ReviewStory"
-# BackendTeam
+# Backend Team
 # "TaskTypesTitle":"[BE][Supplier][Design],[BE] [Supplier][Implementation],[BE] [Supplier][UnitTest],[BE] [Supplier][Review]"
+# Testing Team
+# "TaskTypesTitle": "Test Analysis,Test Case Preparation,Test Execution"
 # for Task
       - name: Create Task Creation Automation Inputs JSON
         run: |
@@ -23,7 +25,7 @@ jobs:
                 "Organization": "GSIntegrationTeam",
                 "ProjectName": "Scrap%20Management",
                 "ActivateAutoClose": false,
-                "TaskTypesTitle":"FE-CreatUI,FE-Review,FE-APIIntegration,FE-ReviewStory"
+                "TaskTypesTitle":"Test Analysis,Test Case Preparation,Test Execution"
             }
           }' > TaskCreationAutomation.json
           
