@@ -16,7 +16,8 @@ jobs:
             "inputs": {
                 "AzureToken": "${{ secrets.AZURE_PAT }}",
                 "Organization": "GSIntegrationTeam",
-                "ProjectName": "Scrap%20Management"
+                "ProjectName": "Scrap%20Management".
+                "ActivateAutoClose": false,
                 "TaskTypesTitle":"{"Test1 Azure-DO","Test2 Azure-DO"}"
             }
           }' > TaskCreationAutomation.json
