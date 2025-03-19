@@ -37,7 +37,7 @@ Go to your forked repository ➝ **Settings** ➝ **Secrets and Variables** ➝ 
 
 | Secret Name       | Description                                               | Where to Get It                                                                                          |
 | ----------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `AZURE_PAT`       | Personal Access Token for Azure DevOps                    | 1. Go to [Azure DevOps](https://dev.azure.com/). 2. Click on your profile ➝ **Personal Access Tokens**. 3. Generate a token with Work Item Read & Write permissions. |
+| `AZURE_PAT`       | Personal Access Token for Azure DevOps                    | 1. Go to [Azure DevOps](https://dev.azure.com/). <br> 2. Click on your profile ➝ **Personal Access Tokens**. <br> 3. Generate a token with Work Item Read & Write permissions. |
 | `privateRepoAuth` | GitHub token to trigger workflows in private repositories | This token is **read-only** and will be added publicly in the repository settings. |
 
 ### 3️⃣ Set Up Repository Variables
