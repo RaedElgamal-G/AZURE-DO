@@ -25,7 +25,7 @@ jobs:
                 "Organization": "GSIntegrationTeam",
                 "ProjectName": "Scrap%20Management",
                 "ActivateAutoClose": false,
-                "TaskTypesTitle":"TestForMe"
+                "TaskTypesTitle":"TestForMe",
                 "TaskScope": "Current Sprint",
                 "TaskUSScope": "Web",
                 "TaskTags": ""
