@@ -25,7 +25,10 @@ jobs:
                 "Organization": "GSIntegrationTeam",
                 "ProjectName": "Scrap%20Management",
                 "ActivateAutoClose": false,
-                "TaskTypesTitle":"FE-CreatUI,FE-Review,FE-APIIntegration,FE-ReviewStory,FE-UnitTest"
+                "TaskTypesTitle":"TestForMe"
+                "TaskScope": "Current Sprint",
+                "TaskUSScope": "Web",
+                "TaskTags": ""
             }
           }' > TaskCreationAutomation.json
           
