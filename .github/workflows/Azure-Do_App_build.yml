@@ -28,8 +28,8 @@ jobs:
       - name: Build EXE with Nuitka
         run: |
           cd "Azure-Do App"
-          nuitka --standalone --onefile --windows-disable-console \
-                 --include-data-dir=assets=assets \
+          nuitka --standalone --onefile --windows-disable-console ^
+                 --include-data-dir=assets=assets ^
                  --lto=yes --mingw64 Azure-Do.py
 
       - name: Move EXE to root for upload
