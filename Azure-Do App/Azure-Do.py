@@ -31,11 +31,29 @@ class ScrollableFrame(tk.Frame):
         self.inner.bind("<Configure>", self._on_frame_configure)
         self.canvas.bind("<Configure>", self._on_canvas_configure)
 
+        # Bind mouse wheel events for scrolling
+        self.canvas.bind_all("<MouseWheel>", self._on_mousewheel)
+        self.canvas.bind_all("<Button-4>", self._on_mousewheel)
+        self.canvas.bind_all("<Button-5>", self._on_mousewheel)
+        self.inner.bind("<MouseWheel>", self._on_mousewheel)
+        self.inner.bind("<Button-4>", self._on_mousewheel)
+        self.inner.bind("<Button-5>", self._on_mousewheel)
+
+
+
     def _on_frame_configure(self, event):
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
 
     def _on_canvas_configure(self, event):
         self.canvas.itemconfig(self.inner_id, width=event.width)
+
+    def _on_mousewheel(self, event):
+        """Handle mouse wheel scrolling for Windows and Linux"""
+        if event.num == 4 or event.delta > 0:
+            self.canvas.yview_scroll(-1, "units")
+        elif event.num == 5 or event.delta < 0:
+            self.canvas.yview_scroll(1, "units")
+
 
 
 def get_github_token():
