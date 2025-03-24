@@ -24,7 +24,7 @@ jobs:
                 "AzureToken": "${{ secrets.AZURE_PAT }}",
                 "Organization": "GSIntegrationTeam",
                 "ProjectName": "Scrap%20Management",
-                "ActivateAutoClose": false,
+                "ActivateAutoClose": true,
                 "TaskTypesTitle": "Test Analysis,Test Case Preparation,Test Execution,Retesting",
                 "TaskScope": "Current Sprint", 
                 "TaskUSScope": "Web",
